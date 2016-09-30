@@ -1,5 +1,4 @@
-﻿using System;
-using System.Windows.Forms;
+﻿using System.Windows.Forms;
 
 namespace TnAConfigureProgram
 {
@@ -11,11 +10,6 @@ namespace TnAConfigureProgram
         {
             InitializeComponent();
             opener = parentForm;
-        }
-
-        private void buttonOkay_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
+        }        
     }
 }

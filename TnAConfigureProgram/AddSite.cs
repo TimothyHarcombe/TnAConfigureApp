@@ -45,7 +45,7 @@ namespace TnAConfigureProgram
 
             if (string.IsNullOrEmpty(comboBoxRegion.Text) || string.IsNullOrEmpty(textBoxSiteName.Text))
             {
-                MessageBox.Show("Please make sure the following areas are filled in: \n\n\t* Region\n\t* Site Name", "Warning");
+                MessageBox.Show("Please make sure the following areas are filled in: \n\n\t* Region\n\t* Site Name", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
             else
@@ -53,11 +53,11 @@ namespace TnAConfigureProgram
                 if (!Directory.Exists(pathDir + "\\" + comboBoxRegion.Text + "\\" + textBoxSiteName.Text))
                 {
                     Directory.CreateDirectory(pathDir + "\\" + comboBoxRegion.Text + "\\" + textBoxSiteName.Text);
-                    MessageBox.Show("Directory Created.", "Message");
+                    MessageBox.Show("Directory Created.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
-                    MessageBox.Show("Directory Already Exists.", "Message");
+                    MessageBox.Show("Directory Already Exists.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
 
                 textBoxSiteName.Clear();
@@ -74,13 +74,13 @@ namespace TnAConfigureProgram
 
             if (string.IsNullOrEmpty(comboBoxRegion.Text) || string.IsNullOrEmpty(comboBoxSite.Text) || string.IsNullOrEmpty(textBoxGatewayArea.Text))
             {
-                MessageBox.Show("Please make sure the following areas are filled in: \n\n\t* Region\n\t* Site\n\t* GateWay Area Name", "Warning");
+                MessageBox.Show("Please make sure the following areas are filled in: \n\n\t* Region\n\t* Site\n\t* GateWay Area Name", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
             else if (string.IsNullOrEmpty(textBoxLU.Text) || string.IsNullOrEmpty(textBoxIPAddress.Text) || string.IsNullOrEmpty(textBoxSubMask.Text) 
                 || string.IsNullOrEmpty(textBoxBL.Text) || string.IsNullOrEmpty(textBoxDefaultGateway.Text) || string.IsNullOrEmpty(textBoxFirefly.Text))
             {
-                MessageBox.Show("Please make sure the following areas are filled in: \n\n\t* My LU\n\t* My IP\n\t* Sub Netmask\n\t* Host IP\n\t* Router IP\n\t* FireFly IP", "Warning");
+                MessageBox.Show("Please make sure the following areas are filled in: \n\n\t* My LU\n\t* My IP\n\t* Sub Netmask\n\t* Host IP\n\t* Router IP\n\t* FireFly IP", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
             else
@@ -101,11 +101,11 @@ namespace TnAConfigureProgram
 
                     textBoxGatewayArea.Clear();
 
-                    MessageBox.Show("Configuration Created.", "Message");
+                    MessageBox.Show("Configuration Created.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
-                    MessageBox.Show("Configuration Already Exists.", "Message");
+                    MessageBox.Show("Configuration Already Exists.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }            
         }      

@@ -52,6 +52,12 @@ namespace TnAConfigureProgram
             dcg.Show();            
         }
 
+        private void restoreSiteGateWayToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Restore rst = new Restore(this);
+            rst.Show();
+        }
+
         private void aboutTnAConfigureProgramToolStripMenuItem_Click(object sender, EventArgs e)
         {
             About abt = new About(this);
@@ -74,7 +80,7 @@ namespace TnAConfigureProgram
         {
             if (string.IsNullOrEmpty(textBoxIndex.Text))
             {
-                MessageBox.Show("Please select a Network Adapter.", "Warning");
+                MessageBox.Show("Please select a Network Adapter.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }            
             else
@@ -166,21 +172,11 @@ namespace TnAConfigureProgram
 
         private void buttonConfigureGateway_Click(object sender, EventArgs e)
         {         
-            if (string.IsNullOrEmpty(textBoxIndex.Text))
+            if (string.IsNullOrEmpty(textBoxIndex.Text) || string.IsNullOrEmpty(comboBoxSelectSite.Text) || string.IsNullOrEmpty(comboBoxGWArea.Text))
             {
-                MessageBox.Show("Please select a Network Adapter.", "Warning");
+                MessageBox.Show("Please make sure the following area are filled in: \n\n* Network Adapter\n* Site\n* GateWay Area", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
-            }
-            else if (string.IsNullOrEmpty(comboBoxSelectSite.Text))
-            {
-                MessageBox.Show("Please select a Site for the area of the GateWay.", "Warning");
-                return;
-            }
-            else if (string.IsNullOrEmpty(comboBoxGWArea.Text))
-            {
-                MessageBox.Show("Please select GateWay Area.", "Warning");
-                return;
-            }
+            }            
             else
             {
                 Cursor = Cursors.WaitCursor;
@@ -237,6 +233,9 @@ namespace TnAConfigureProgram
                 richMessage.Append("Unable to connect to Gateway.");
                 richMessage.Append(Environment.NewLine);
                 richTextBoxMessage.Text = richMessage.ToString();
+
+                MessageBox.Show("Unable to connect to GateWay. \n\n* See if the Firmware is the correct Firmware\n* Reset the Network card.","ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
                 return;
             }
 
@@ -281,6 +280,10 @@ namespace TnAConfigureProgram
             richMessage.Append("Gateway has been configured.");
             richMessage.Append(Environment.NewLine);
             richTextBoxMessage.Text = richMessage.ToString();
-        }        
+
+            MessageBox.Show("GateWay has been configured.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        
     }
 }

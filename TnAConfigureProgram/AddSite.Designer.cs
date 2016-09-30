@@ -52,8 +52,8 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.comboBoxRegion = new System.Windows.Forms.ComboBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.buttonCreate = new System.Windows.Forms.Button();
             this.comboBoxSite = new System.Windows.Forms.ComboBox();
+            this.buttonCreate = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -145,7 +145,7 @@
             this.buttonExit.Name = "buttonExit";
             this.buttonExit.Size = new System.Drawing.Size(75, 23);
             this.buttonExit.TabIndex = 18;
-            this.buttonExit.Text = "Exit";
+            this.buttonExit.Text = "Close";
             this.buttonExit.UseVisualStyleBackColor = true;
             this.buttonExit.Click += new System.EventHandler(this.buttonExit_Click);
             // 
@@ -321,6 +321,16 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Add Gateway Information:";
             // 
+            // comboBoxSite
+            // 
+            this.comboBoxSite.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxSite.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxSite.FormattingEnabled = true;
+            this.comboBoxSite.Location = new System.Drawing.Point(138, 34);
+            this.comboBoxSite.Name = "comboBoxSite";
+            this.comboBoxSite.Size = new System.Drawing.Size(139, 21);
+            this.comboBoxSite.TabIndex = 37;
+            // 
             // buttonCreate
             // 
             this.buttonCreate.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -331,16 +341,6 @@
             this.buttonCreate.Text = "Create";
             this.buttonCreate.UseVisualStyleBackColor = true;
             this.buttonCreate.Click += new System.EventHandler(this.buttonCreate_Click);
-            // 
-            // comboBoxSite
-            // 
-            this.comboBoxSite.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxSite.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBoxSite.FormattingEnabled = true;
-            this.comboBoxSite.Location = new System.Drawing.Point(138, 34);
-            this.comboBoxSite.Name = "comboBoxSite";
-            this.comboBoxSite.Size = new System.Drawing.Size(139, 21);
-            this.comboBoxSite.TabIndex = 37;
             // 
             // AddSite
             // 

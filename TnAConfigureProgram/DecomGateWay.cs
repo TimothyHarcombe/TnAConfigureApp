@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace TnAConfigureProgram
@@ -86,36 +88,58 @@ namespace TnAConfigureProgram
         private void buttonDecomGate_Click(object sender, EventArgs e)
         {
             string userProfile = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile);
-            string subFolders = @"Box Sync\Tna\TnA Configs\TnA Config Text Files";
+            string movSubFolders = @"Box Sync\Tna\TnA Configs\TnA Config Text Files";
+            string savSubFolder = @"Box Sync\Tna\TnA Configs\Backup after Removing Config Text Files";
 
-            var pathDir = Path.Combine(userProfile, subFolders);
+            var pathMovDir = Path.Combine(userProfile, movSubFolders);
+            var pathSavDir = Path.Combine(userProfile, savSubFolder);
 
             if (string.IsNullOrEmpty(comboBoxRegion.Text) || string.IsNullOrEmpty(comboBoxSite.Text))
             {
-                MessageBox.Show("Please select a Region and/or Site.", "Warning");
+                MessageBox.Show("Please select a Region and/or Site.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
             else if (string.IsNullOrEmpty(comboBoxRemGate.Text))
             {
-                MessageBox.Show("Please select a GateWay.", "Warning");
+                MessageBox.Show("Please select a GateWay.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
             else
             {
-                DialogResult areYouSure = MessageBox.Show("Are you sure you want to Decommission this GateWay?", "Warning", MessageBoxButtons.YesNo);
+                DialogResult areYouSure = MessageBox.Show("You are about to Decommission this GateWay. You will loose the configuration file. Are you sure you want to Continue?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Stop);
 
                 if (areYouSure == DialogResult.Yes)
                 {
-                    File.Delete(pathDir + "\\" + comboBoxRegion.Text + "\\" + comboBoxSite.Text + "\\" + comboBoxRemGate.Text);
 
-                    comboBoxRemGate.ResetText();
-                    comboBoxRemGate.Items.Clear();
-
-                    string[] files = Directory.GetFiles(pathDir + "\\" + comboBoxRegion.Text + "\\" + comboBoxSite.Text);
-                    foreach (string file in files)
+                    if (!Directory.Exists(pathSavDir + "\\" + comboBoxRegion.Text + "\\" + comboBoxSite.Text))
                     {
-                        comboBoxRemGate.Items.Add(Path.GetFileName(file));
+                        Directory.CreateDirectory(pathSavDir + "\\" + comboBoxRegion.Text + "\\" + comboBoxSite.Text);
+                        File.Move(pathMovDir + "\\" + comboBoxRegion.Text + "\\" + comboBoxSite.Text + "\\" + comboBoxRemGate.Text, pathSavDir + "\\" + comboBoxRegion.Text + "\\" + comboBoxSite.Text + "\\" + comboBoxRemGate.Text);
+
+                        comboBoxRemGate.ResetText();
+                        comboBoxRemGate.Items.Clear();
+
+                        string[] files = Directory.GetFiles(pathMovDir + "\\" + comboBoxRegion.Text + "\\" + comboBoxSite.Text);
+                        foreach (string file in files)
+                        {
+                            comboBoxRemGate.Items.Add(Path.GetFileName(file));
+                        }
                     }
+                    else
+                    {
+                        File.Move(pathMovDir + "\\" + comboBoxRegion.Text + "\\" + comboBoxSite.Text + "\\" + comboBoxRemGate.Text, pathSavDir + "\\" + comboBoxRegion.Text + "\\" + comboBoxSite.Text + "\\" + comboBoxRemGate.Text);
+
+                        comboBoxRemGate.ResetText();
+                        comboBoxRemGate.Items.Clear();
+
+                        string[] files = Directory.GetFiles(pathMovDir + "\\" + comboBoxRegion.Text + "\\" + comboBoxSite.Text);
+                        foreach (string file in files)
+                        {
+                            comboBoxRemGate.Items.Add(Path.GetFileName(file));
+                        }
+                    }
+
+                    MessageBox.Show("If you have removed the wrong GateWay please refer back to the Restore Site/GateWay Tab.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else if (areYouSure == DialogResult.No)
                 {
@@ -127,29 +151,46 @@ namespace TnAConfigureProgram
         private void buttonDecomSite_Click(object sender, EventArgs e)
         {
             string userProfile = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile);
-            string subFolders = @"Box Sync\Tna\TnA Configs\TnA Config Text Files";
+            string movSubFolders = @"Box Sync\Tna\TnA Configs\TnA Config Text Files";
+            string savSubFolder = @"Box Sync\Tna\TnA Configs\Backup after Removing Config Text Files";
 
-            var pathDir = Path.Combine(userProfile, subFolders);
+            var pathMovDir = Path.Combine(userProfile, movSubFolders);
+            var pathSavDir = Path.Combine(userProfile, savSubFolder);
 
             if (string.IsNullOrEmpty(comboBoxRegion.Text) || string.IsNullOrEmpty(comboBoxDecomSite.Text))
             {
-                MessageBox.Show("Please select a Region and/or Site.", "Warning");
+                MessageBox.Show("Please select a Region and/or Site.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
             else
             {
-                DialogResult areYouSure = MessageBox.Show("Are you sure you want to Decommission this Site, you will loose all configuration files?", "Warning", MessageBoxButtons.YesNo);
+                DialogResult areYouSure = MessageBox.Show("You are about to Decommission this Site, you will loose all configuration files. Are you sure you want to Continue?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Stop);
 
                 if (areYouSure == DialogResult.Yes)
                 {
-                    DirectoryInfo f = new DirectoryInfo(pathDir + "\\" + comboBoxRegion.Text + "\\" + comboBoxDecomSite.Text);
 
-                    foreach (FileInfo file in f.GetFiles())
+                    if (!Directory.Exists(pathSavDir + "\\" + comboBoxRegion.Text))
                     {
-                        file.Delete();
+                        Directory.CreateDirectory(pathSavDir + "\\" + comboBoxRegion.Text);
+                        Directory.Move(pathMovDir + "\\" + comboBoxRegion.Text + "\\" + comboBoxDecomSite.Text, pathSavDir + "\\" + comboBoxRegion.Text + "\\" + comboBoxDecomSite.Text);
+                    }
+                    else
+                    {
+                        List<string> Dirs = Directory.GetFiles(pathMovDir + "\\" + comboBoxRegion.Text + "\\" + comboBoxDecomSite.Text, "*.*", SearchOption.AllDirectories).ToList();
+
+                        foreach (var file in Dirs)
+                        {
+                            FileInfo moveFile = new FileInfo(file);
+                            if (new FileInfo(pathSavDir + "\\" + comboBoxRegion.Text + "\\" + comboBoxDecomSite.Text + "\\" + moveFile.Name).Exists == false)
+                            {
+                                moveFile.MoveTo(pathSavDir + "\\" + comboBoxRegion.Text + "\\" + comboBoxDecomSite.Text + "\\" + moveFile.Name);
+                            }
+                        }
+                        Directory.Delete(pathMovDir + "\\" + comboBoxRegion.Text + "\\" + comboBoxDecomSite.Text);
                     }
 
-                    Directory.Delete(pathDir + "\\" + comboBoxRegion.Text + "\\" + comboBoxDecomSite.Text);                                                           
+                    MessageBox.Show("If you have removed the wrong Site please refer back to the Restore Site/GateWay Tab.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                                                             
                 }
                 else if (areYouSure == DialogResult.No)
                 {

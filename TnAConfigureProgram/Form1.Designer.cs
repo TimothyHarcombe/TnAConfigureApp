@@ -63,6 +63,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.textBoxIndex = new System.Windows.Forms.TextBox();
             this.richTextBoxNICAdapters = new System.Windows.Forms.RichTextBox();
+            this.restoreSiteGateWayToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -101,7 +102,8 @@
             this.siteInformationToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.addNewSiteToolStripMenuItem,
             this.changeSiteInformationToolStripMenuItem,
-            this.decommissionedGateWayToolStripMenuItem});
+            this.decommissionedGateWayToolStripMenuItem,
+            this.restoreSiteGateWayToolStripMenuItem});
             this.siteInformationToolStripMenuItem.Name = "siteInformationToolStripMenuItem";
             this.siteInformationToolStripMenuItem.Size = new System.Drawing.Size(156, 20);
             this.siteInformationToolStripMenuItem.Text = "Site/GateWay Information";
@@ -138,8 +140,8 @@
             this.lifeLocTesterFirmwareToolStripMenuItem,
             this.lCProgramsToolStripMenuItem});
             this.tnAConfigureToolsToolStripMenuItem.Name = "tnAConfigureToolsToolStripMenuItem";
-            this.tnAConfigureToolsToolStripMenuItem.Size = new System.Drawing.Size(129, 20);
-            this.tnAConfigureToolsToolStripMenuItem.Text = "TnA Configure Tools";
+            this.tnAConfigureToolsToolStripMenuItem.Size = new System.Drawing.Size(125, 20);
+            this.tnAConfigureToolsToolStripMenuItem.Text = "Configuration Tools";
             // 
             // sagemConfigureToolStripMenuItem
             // 
@@ -279,7 +281,7 @@
             this.groupBox1.Size = new System.Drawing.Size(599, 121);
             this.groupBox1.TabIndex = 34;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "TnA GateWay Configure:";
+            this.groupBox1.Text = "GateWay Configuration:";
             // 
             // labelMessage
             // 
@@ -394,6 +396,13 @@
             this.richTextBoxNICAdapters.TabIndex = 0;
             this.richTextBoxNICAdapters.Text = "";
             // 
+            // restoreSiteGateWayToolStripMenuItem
+            // 
+            this.restoreSiteGateWayToolStripMenuItem.Name = "restoreSiteGateWayToolStripMenuItem";
+            this.restoreSiteGateWayToolStripMenuItem.Size = new System.Drawing.Size(240, 22);
+            this.restoreSiteGateWayToolStripMenuItem.Text = "Restore Site/GateWay";
+            this.restoreSiteGateWayToolStripMenuItem.Click += new System.EventHandler(this.restoreSiteGateWayToolStripMenuItem_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -406,7 +415,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
-            this.Text = "TnA Configure Program";
+            this.Text = "Time and Attendance Configuration Program";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -455,6 +464,7 @@
         private System.Windows.Forms.ToolStripMenuItem lifeLocTesterFirmwareToolStripMenuItem;
         private System.Windows.Forms.RichTextBox richTextBoxMessage;
         private System.Windows.Forms.Label labelMessage;
+        private System.Windows.Forms.ToolStripMenuItem restoreSiteGateWayToolStripMenuItem;
     }
 }
 
