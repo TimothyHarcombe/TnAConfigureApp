@@ -36,6 +36,7 @@
             this.addNewSiteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.changeSiteInformationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.decommissionedGateWayToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.restoreSiteGateWayToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tnAConfigureToolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sagemConfigureToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.rabitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -63,7 +64,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.textBoxIndex = new System.Windows.Forms.TextBox();
             this.richTextBoxNICAdapters = new System.Windows.Forms.RichTextBox();
-            this.restoreSiteGateWayToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -111,23 +111,30 @@
             // addNewSiteToolStripMenuItem
             // 
             this.addNewSiteToolStripMenuItem.Name = "addNewSiteToolStripMenuItem";
-            this.addNewSiteToolStripMenuItem.Size = new System.Drawing.Size(240, 22);
+            this.addNewSiteToolStripMenuItem.Size = new System.Drawing.Size(231, 22);
             this.addNewSiteToolStripMenuItem.Text = "Add New Site/GateWay";
             this.addNewSiteToolStripMenuItem.Click += new System.EventHandler(this.addNewSiteToolStripMenuItem_Click);
             // 
             // changeSiteInformationToolStripMenuItem
             // 
             this.changeSiteInformationToolStripMenuItem.Name = "changeSiteInformationToolStripMenuItem";
-            this.changeSiteInformationToolStripMenuItem.Size = new System.Drawing.Size(240, 22);
+            this.changeSiteInformationToolStripMenuItem.Size = new System.Drawing.Size(231, 22);
             this.changeSiteInformationToolStripMenuItem.Text = "Change GateWay Information";
             this.changeSiteInformationToolStripMenuItem.Click += new System.EventHandler(this.changeSiteInformationToolStripMenuItem_Click);
             // 
             // decommissionedGateWayToolStripMenuItem
             // 
             this.decommissionedGateWayToolStripMenuItem.Name = "decommissionedGateWayToolStripMenuItem";
-            this.decommissionedGateWayToolStripMenuItem.Size = new System.Drawing.Size(240, 22);
-            this.decommissionedGateWayToolStripMenuItem.Text = "Decommissioned Site/GateWay";
+            this.decommissionedGateWayToolStripMenuItem.Size = new System.Drawing.Size(231, 22);
+            this.decommissionedGateWayToolStripMenuItem.Text = "Remove Site/GateWay";
             this.decommissionedGateWayToolStripMenuItem.Click += new System.EventHandler(this.decommissionedGateWayToolStripMenuItem_Click);
+            // 
+            // restoreSiteGateWayToolStripMenuItem
+            // 
+            this.restoreSiteGateWayToolStripMenuItem.Name = "restoreSiteGateWayToolStripMenuItem";
+            this.restoreSiteGateWayToolStripMenuItem.Size = new System.Drawing.Size(231, 22);
+            this.restoreSiteGateWayToolStripMenuItem.Text = "Restore Site/GateWay";
+            this.restoreSiteGateWayToolStripMenuItem.Click += new System.EventHandler(this.restoreSiteGateWayToolStripMenuItem_Click);
             // 
             // tnAConfigureToolsToolStripMenuItem
             // 
@@ -219,8 +226,8 @@
             // aboutTnAConfigureProgramToolStripMenuItem
             // 
             this.aboutTnAConfigureProgramToolStripMenuItem.Name = "aboutTnAConfigureProgramToolStripMenuItem";
-            this.aboutTnAConfigureProgramToolStripMenuItem.Size = new System.Drawing.Size(237, 22);
-            this.aboutTnAConfigureProgramToolStripMenuItem.Text = "About TnA Configure Program";
+            this.aboutTnAConfigureProgramToolStripMenuItem.Size = new System.Drawing.Size(304, 22);
+            this.aboutTnAConfigureProgramToolStripMenuItem.Text = "About Time and Attendance Configuration ";
             this.aboutTnAConfigureProgramToolStripMenuItem.Click += new System.EventHandler(this.aboutTnAConfigureProgramToolStripMenuItem_Click);
             // 
             // buttonConfigureGateway
@@ -395,13 +402,6 @@
             this.richTextBoxNICAdapters.Size = new System.Drawing.Size(375, 122);
             this.richTextBoxNICAdapters.TabIndex = 0;
             this.richTextBoxNICAdapters.Text = "";
-            // 
-            // restoreSiteGateWayToolStripMenuItem
-            // 
-            this.restoreSiteGateWayToolStripMenuItem.Name = "restoreSiteGateWayToolStripMenuItem";
-            this.restoreSiteGateWayToolStripMenuItem.Size = new System.Drawing.Size(240, 22);
-            this.restoreSiteGateWayToolStripMenuItem.Text = "Restore Site/GateWay";
-            this.restoreSiteGateWayToolStripMenuItem.Click += new System.EventHandler(this.restoreSiteGateWayToolStripMenuItem_Click);
             // 
             // Form1
             // 

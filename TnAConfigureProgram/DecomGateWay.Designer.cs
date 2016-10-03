@@ -94,7 +94,7 @@
             this.groupBox1.Size = new System.Drawing.Size(425, 280);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Decommission a GateWay:";
+            this.groupBox1.Text = "Remove a Site/GateWay:";
             // 
             // comboBoxDecomSite
             // 
@@ -113,7 +113,7 @@
             this.buttonDecomSite.Name = "buttonDecomSite";
             this.buttonDecomSite.Size = new System.Drawing.Size(130, 23);
             this.buttonDecomSite.TabIndex = 13;
-            this.buttonDecomSite.Text = "Decommission Site";
+            this.buttonDecomSite.Text = "Remove Site";
             this.buttonDecomSite.UseVisualStyleBackColor = true;
             this.buttonDecomSite.Click += new System.EventHandler(this.buttonDecomSite_Click);
             // 
@@ -123,9 +123,9 @@
             this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label16.Location = new System.Drawing.Point(4, 85);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(148, 13);
+            this.label16.Size = new System.Drawing.Size(120, 13);
             this.label16.TabIndex = 11;
-            this.label16.Text = "Select Site To Decommission:";
+            this.label16.Text = "Select Site To Remove:";
             // 
             // comboBoxSite
             // 
@@ -379,7 +379,7 @@
             this.buttonDecomGate.Name = "buttonDecomGate";
             this.buttonDecomGate.Size = new System.Drawing.Size(97, 23);
             this.buttonDecomGate.TabIndex = 2;
-            this.buttonDecomGate.Text = "Decommission";
+            this.buttonDecomGate.Text = "Remove";
             this.buttonDecomGate.UseVisualStyleBackColor = true;
             this.buttonDecomGate.Click += new System.EventHandler(this.buttonDecomGate_Click);
             // 
@@ -389,9 +389,9 @@
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(4, 168);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(175, 13);
+            this.label2.Size = new System.Drawing.Size(147, 13);
             this.label2.TabIndex = 1;
-            this.label2.Text = "Select GateWay To Decommission:";
+            this.label2.Text = "Select GateWay To Remove:";
             // 
             // label1
             // 
@@ -410,7 +410,7 @@
             this.ClientSize = new System.Drawing.Size(444, 303);
             this.Controls.Add(this.groupBox1);
             this.Name = "DecomGateWay";
-            this.Text = "Decommission GateWay";
+            this.Text = "Remove Site/GateWay";
             this.Load += new System.EventHandler(this.DecomGateWay_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
