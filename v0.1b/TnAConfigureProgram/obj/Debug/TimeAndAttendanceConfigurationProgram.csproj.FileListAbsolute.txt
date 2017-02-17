@@ -1,0 +1,17 @@
+C:\Projects\TnAConfigureProgram\bin\Debug\TnAConfigureProgram.exe.config
+C:\Projects\TnAConfigureProgram\obj\Debug\TnAConfigureProgram.About.resources
+C:\Projects\TnAConfigureProgram\obj\Debug\TnAConfigureProgram.Add_New_Firmware.resources
+C:\Projects\TnAConfigureProgram\obj\Debug\TnAConfigureProgram.AddSite.resources
+C:\Projects\TnAConfigureProgram\obj\Debug\TnAConfigureProgram.ChangeSiteInfo.resources
+C:\Projects\TnAConfigureProgram\obj\Debug\TnAConfigureProgram.DecomGateWay.resources
+C:\Projects\TnAConfigureProgram\obj\Debug\TnAConfigureProgram.Form1.resources
+C:\Projects\TnAConfigureProgram\obj\Debug\TnAConfigureProgram.LCFirmware.resources
+C:\Projects\TnAConfigureProgram\obj\Debug\TnAConfigureProgram.LifeLoc.resources
+C:\Projects\TnAConfigureProgram\obj\Debug\TnAConfigureProgram.Properties.Resources.resources
+C:\Projects\TnAConfigureProgram\obj\Debug\TnAConfigureProgram.Restore.resources
+C:\Projects\TnAConfigureProgram\obj\Debug\TimeAndAttendanceConfigurationProgram.csproj.GenerateResource.Cache
+C:\Projects\TnAConfigureProgram\bin\Debug\TnAConfigureProgram.exe
+C:\Projects\TnAConfigureProgram\bin\Debug\TnAConfigureProgram.pdb
+C:\Projects\TnAConfigureProgram\obj\Debug\TnAConfigureProgram.exe
+C:\Projects\TnAConfigureProgram\obj\Debug\TnAConfigureProgram.pdb
+C:\Projects\TnAConfigureProgram\obj\Debug\TimeAndAttendanceConfigurationProgram.csprojResolveAssemblyReference.cache
