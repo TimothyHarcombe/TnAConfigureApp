@@ -55,9 +55,9 @@ namespace TnAConfigureProgram.CS.Class
                     stringData = Encoding.ASCII.GetString(data, 0, recv);
                     Console.WriteLine(stringData);
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
-                    MessageBox.Show(ex.ToString(), "Exception!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
                 }
 
                 finally
