@@ -53,6 +53,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.richTextBoxTelnetOutput = new System.Windows.Forms.RichTextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.comboBoxRegion = new System.Windows.Forms.ComboBox();
             this.comboBoxSelectSite = new System.Windows.Forms.ComboBox();
@@ -60,7 +61,6 @@
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.comboBoxNICAdapter = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.richTextBoxTelnetOutput = new System.Windows.Forms.RichTextBox();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -230,7 +230,7 @@
             // buttonConfigureGateway
             // 
             this.buttonConfigureGateway.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonConfigureGateway.Location = new System.Drawing.Point(261, 127);
+            this.buttonConfigureGateway.Location = new System.Drawing.Point(497, 87);
             this.buttonConfigureGateway.Name = "buttonConfigureGateway";
             this.buttonConfigureGateway.Size = new System.Drawing.Size(95, 23);
             this.buttonConfigureGateway.TabIndex = 1;
@@ -271,10 +271,21 @@
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(8, 120);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(599, 156);
+            this.groupBox1.Size = new System.Drawing.Size(599, 260);
             this.groupBox1.TabIndex = 34;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "GateWay Configuration:";
+            // 
+            // richTextBoxTelnetOutput
+            // 
+            this.richTextBoxTelnetOutput.BackColor = System.Drawing.SystemColors.MenuText;
+            this.richTextBoxTelnetOutput.Font = new System.Drawing.Font("Calisto MT", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.richTextBoxTelnetOutput.ForeColor = System.Drawing.Color.Aqua;
+            this.richTextBoxTelnetOutput.Location = new System.Drawing.Point(9, 126);
+            this.richTextBoxTelnetOutput.Name = "richTextBoxTelnetOutput";
+            this.richTextBoxTelnetOutput.Size = new System.Drawing.Size(583, 128);
+            this.richTextBoxTelnetOutput.TabIndex = 39;
+            this.richTextBoxTelnetOutput.Text = "";
             // 
             // label5
             // 
@@ -355,22 +366,11 @@
     "r that you would like to use via \r\nthe Index number.\r\n";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // richTextBoxTelnetOutput
-            // 
-            this.richTextBoxTelnetOutput.BackColor = System.Drawing.SystemColors.MenuText;
-            this.richTextBoxTelnetOutput.Font = new System.Drawing.Font("Calisto MT", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.richTextBoxTelnetOutput.ForeColor = System.Drawing.Color.Aqua;
-            this.richTextBoxTelnetOutput.Location = new System.Drawing.Point(362, 22);
-            this.richTextBoxTelnetOutput.Name = "richTextBoxTelnetOutput";
-            this.richTextBoxTelnetOutput.Size = new System.Drawing.Size(230, 128);
-            this.richTextBoxTelnetOutput.TabIndex = 39;
-            this.richTextBoxTelnetOutput.Text = "";
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(612, 288);
+            this.ClientSize = new System.Drawing.Size(612, 392);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.menuStrip1);

@@ -59,13 +59,10 @@ namespace TnAConfigureProgram.CS.Class
                 {
                     return;
                 }
-
-                finally
-                {
-                    ns.Close();
-                    server.Close();
-                }
             }
+
+            ns.Close();
+            server.Close();
 
             MessageBox.Show("GateWay has been configured.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }

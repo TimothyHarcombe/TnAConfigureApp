@@ -3,7 +3,6 @@ using System.IO;
 using System.Windows.Forms;
 using System.Net.NetworkInformation;
 using System.Collections.Generic;
-using TnAConfigureProgram.CS.Class;
 
 namespace TnAConfigureProgram
 {
@@ -139,7 +138,7 @@ namespace TnAConfigureProgram
             var pathDir = Path.Combine(userProfile, subFolders);
 
             if (Directory.Exists(pathDir + "\\" + comboBoxRegion.Text))
-            {
+                {
                 string[] files = Directory.GetDirectories(pathDir + "\\" + comboBoxRegion.Text);
 
                 foreach (string file in files)
@@ -160,9 +159,9 @@ namespace TnAConfigureProgram
             var pathDir = Path.Combine(userProfile, subFolders);
 
             if (Directory.Exists(pathDir + "\\" + comboBoxRegion.Text + "\\" + comboBoxSelectSite.Text))
-            {
+                {
                 string[] files = Directory.GetFiles(pathDir + "\\" + comboBoxRegion.Text + "\\" + comboBoxSelectSite.Text);
-
+                
                 foreach (string file in files)
                 {
                     comboBoxGWArea.Items.Add(Path.GetFileName(file));
@@ -184,7 +183,7 @@ namespace TnAConfigureProgram
                 NetworkManagement setIP = new NetworkManagement();
                 setIP.setIP(comboBoxNICAdapter.Text, "100.100.100.103", "255.255.255.0");
 
-                Telnet tel = new Telnet();
+                CS.Class.Telnet tel = new CS.Class.Telnet();
                 tel.Gateway(comboBoxRegion.Text, comboBoxSelectSite.Text, comboBoxGWArea.Text);
 
                 NetworkManagement setDHCP = new NetworkManagement();
